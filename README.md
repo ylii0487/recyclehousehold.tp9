@@ -2,9 +2,9 @@
 
 ## Onboarding Project
 
-Problem Lanague: Python
-Version: 3.8
-Architecture Pattern: MVC (Model, View, Controller)
-Framework: Flask
-Database: Mysql
+Problem Lanague: Python <br>
+Version: 3.8 <br>
+Architecture Pattern: MVC (Model, View, Controller) <br>
+Framework: Flask <br>
+Database: Mysql <br>
 
