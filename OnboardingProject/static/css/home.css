@@ -1,0 +1,75 @@
+/*
+This file is used to design the style of the nagvar and foot on the each page
+ */
+
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+
+.navbar a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 25px;
+  border-radius: 5px;
+}
+
+.navbar a.logo{
+    text-align: left;
+    font-family: "Times New Roman", sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #04AA6D;
+}
+
+.navbar a:hover:not(.active) {
+  background-color: #111;
+
+}
+
+
+
+
+.navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.navbar-right{
+    float: right;
+}
+
+@media screen and (max-width: 500px){
+    .navbar a{
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .navbar-right{
+        float: none;
+    }
+}
+
+.footer{
+    position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+
+body{
+    background-color: antiquewhite;
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-opacity:75%;
+    }
