@@ -67,9 +67,22 @@ This file is used to design the style of the nagvar and foot on the each page
 }
 
 body{
-    background-color: antiquewhite;
+    background-color: whitesmoke;
     min-height: 100%;
     background-position: center;
     background-size: cover;
     background-opacity:75%;
     }
+
+.button{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

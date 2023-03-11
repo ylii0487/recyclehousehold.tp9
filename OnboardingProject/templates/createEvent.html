@@ -1,0 +1,20 @@
+
+    <h1> Create a New Event </h1>
+    <form method="post">
+        <label for="title">Event Topic</label>
+        <br>
+        <input type="text" name="title"
+               placeholder="Event topic"
+               value="{{ request.form['event_topic'] }}"></input>
+        <br>
+
+        <label for="content">Event Content</label>
+        <br>
+        <textarea name="content"
+                  placeholder="Event content"
+                  rows="15"
+                  cols="60"
+                  >{{ request.form['event_content'] }}</textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>

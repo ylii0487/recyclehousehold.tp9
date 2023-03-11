@@ -30,7 +30,7 @@ class View():
         return template
 
     def render(self, template, **kwargs):
-        keys = self.global_renders.copy()  # Not the best way to do self, but backwards compatible from PEP448, in Python 3.5+ use keys = {**self.global_renters, **kwargs}
+        keys = self.global_renders.copy()
         keys.update(kwargs)
         template = self.simple_render(template, **keys)
         return template
