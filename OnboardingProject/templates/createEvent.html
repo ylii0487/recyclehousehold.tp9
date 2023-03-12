@@ -1,5 +1,5 @@
-
-    <h1> Create a New Event </h1>
+<!--
+    <h1> Create a New Event</h1>
     <form method="post">
         <label for="title">Event Topic</label>
         <br>
@@ -18,3 +18,19 @@
         <br>
         <button type="submit">Submit</button>
     </form>
+-->
+    <div class="w3-container w3-padding-32" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Create New Event</h3>
+    <p>Lets organise your own event for recycling</p>
+    <form action="/action_page.php" target="_blank">
+        <input class="w3-input w3-border" type="text" placeholder="Event Topic" required name="event_topic">
+        <input class="w3-input w3-section w3-border" type="datetime-local" id="eventtime" required name="event_time">
+        <input class="w3-input w3-section w3-border" type="text" placeholder="Event Place" required name="event_location">
+        <input class="w3-input w3-section w3-border" type="text" placeholder="Contact Details" required name="contact_details">
+        <textarea class="w3-input w3-section w3-border" type="text" placeholder="Event Contents" required name="event_contents"  rows="15"
+                  cols="60"></textarea>
+        <button class="w3-button w3-black w3-section" type="submit">
+            <i class="fa fa-paper-plane"></i> Submit Event
+      </button>
+    </form>
+  </div>

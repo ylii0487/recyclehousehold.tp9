@@ -2,60 +2,6 @@
 This file is used to design the style of the nagvar and foot on the each page
  */
 
-
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-}
-
-
-.navbar a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  line-height: 25px;
-  border-radius: 5px;
-}
-
-.navbar a.logo{
-    text-align: left;
-    font-family: "Times New Roman", sans-serif;
-    font-size: 25px;
-    font-weight: bold;
-    color: #04AA6D;
-}
-
-.navbar a:hover:not(.active) {
-  background-color: #111;
-
-}
-
-
-
-
-.navbar a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-.navbar-right{
-    float: right;
-}
-
-@media screen and (max-width: 500px){
-    .navbar a{
-        float: none;
-        display: block;
-        text-align: left;
-    }
-    .navbar-right{
-        float: none;
-    }
-}
-
 .footer{
     position: fixed;
    left: 0;
@@ -71,11 +17,16 @@ body{
     min-height: 100%;
     background-position: center;
     background-size: cover;
-    background-opacity:75%;
+
     }
 
+.body_contents{
+    padding: 10px;
+}
+
 .button{
-    background-color: #4CAF50;
+    float: right;
+    background-color: black;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -85,4 +36,40 @@ body{
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+}
+
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 90%;
+  padding: 0 10px;
+    margin: 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: left;
+  background-color: #f1f1f1;
 }

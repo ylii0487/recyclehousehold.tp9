@@ -4,8 +4,6 @@ import model
 app = Flask(__name__, template_folder="templates", static_folder='static')
 
 
-
-
 @app.route('/')
 @app.route('/home')
 def index():  # put application's code here
@@ -40,10 +38,21 @@ def create_event():
         return model.create_event(event_topic, event_time, event_place, contact_details, event_content)
 
 
-
-@app.route('/Feedback')
+@app.route('/Feedback', methods=['GET'])
 def feedback():
     return model.feedback_page()
+
+
+@app.route('/SubmitFeedback', methods=['POST', 'GET'])
+def create_feedback():
+    if request.method == 'GET':
+        return model.create_feedbackPage()
+    elif request.method == 'POST':
+        feedback_name = request.form['feedback_name']
+        feedback_email = request.form['feedback_email']
+        feedback_subject = request.form['feedback_subject']
+        feedback_comment = request.form['feedback_comment']
+        return model.create_feedback(feedback_name, feedback_email, feedback_subject, feedback_comment)
 
 
 @app.route('/FAQ')
@@ -54,6 +63,7 @@ def faq():
 @app.route('/AboutUs')
 def about():
     return model.about_page()
+
 
 if __name__ == '__main__':
     app.run(debug=True)

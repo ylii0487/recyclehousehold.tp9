@@ -89,10 +89,16 @@ class MySQLDatabase():
                     event_place varchar(100) NOT NULL,
                     contact_details varchar(100) NOT NULL,
                     event_content varchar(500) NOT NULL
+                  );  
+                  CREATE TABLE IF NOT EXISTS Feedbacks(
+                    feedback_name varchar(20) NOT NULL,
+                    feedback_email varchar(20) NOT NULL,
+                    feedback_subject varchar(100) NOT NULL,
+                    feedback_comment varchar(100) NOT NULL
 
                 )"""
 
-        self.cursor.execute(sql)
+        self.cursor.execute(sql, multi=True)
         self.commit()
         # self.add_event('Happy Recycling Day', '2023-03-21 15:00:00', 'Melbourne center', 'ylii0487@student.monash.edu', 'Learn learn learn!!')
 
@@ -123,6 +129,29 @@ class MySQLDatabase():
         return result
 
 
+    def add_feedback(self, feedback_name, feedback_email, feedback_subject, feedback_comment):
+        sql_cmd = """INSERT INTO Events
+                    VALUES('{feedback_name}', '{feedback_email}','{feedback_subject}', '{feedback_comment}')
+                    """.format(feedback_name=feedback_name, feedback_email=feedback_email, feedback_subject=feedback_subject, feedback_comment=feedback_comment, event_content=event_content)
+        self.execute(sql_cmd)
+
+        self.commit()
+
+        return True
+
+    def get_allFeedback(self):
+        sql_cmd = """SELECT *
+                FROM Feedbacks
+                """
+
+        r = self.execute(sql_cmd)
+
+        print(r)
+        result = list(r.fetchall())
+
+        self.commit()
+
+        return result
 # def connection(self, sql_string):
 #     # Construct connection string
 #
