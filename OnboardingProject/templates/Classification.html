@@ -1,9 +1,153 @@
-<div class="body_contents">
-    <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-        <img class="w3-image" src="../static/images/bins.jpg" alt="Architecture" width="100%" style="background-opacity:75%; padding: 50px 10px">
-        <div class="w3-display-middle w3-margin-top w3-center">
-            <h1 class="w3-xxlarge w3-text-white"><span class="w3-hide-small w3-text-light-grey">Garbage Classification Guideline</span></h1>
-        </div>
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <a href="#yellow" class="w3-bar-item w3-button w3-hover-yellow">
+    <p>Yellow Bin</p>
+  </a>
+  <a href="#red" class="w3-bar-item w3-button w3-hover-red">
+    <p>Red Bin</p>
+  </a>
+  <a href="#green" class="w3-bar-item w3-button w3-hover-green">
+    <p>Green Bin</p>
+  </a>
+
+</nav>
+<div class="classification_contents">
+    <header class="w3-display-container w3-content w3-wide w3-center" style="max-width:1500px;" id="home">
+        <h1 class="w3-xxlarge w3-text-white"><span class="w3-hide-small w3-text-light-green">Garbage Classification Guideline</span></h1>
     </header>
-    <h1></h1>
+
+    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+
+    <!-- First Grid -->
+    <div class="w3-row-padding w3-padding-64 w3-container" id="yellow">
+      <div class="w3-content">
+        <div class="w3-twothird">
+          <h1 class="w3-text-yellow">Yellow Bin</h1>
+          <h5 class="w3-padding-32">Your recycling bin (yellow lid) is for common household packaging items typically bought at a supermarket and found in your kitchen, bathroom or laundry.</h5>
+            <h5 class="w3-text-yellow">These items can go in your recycling bin</h5>
+            <table class="w3-table-all">
+                <tr>
+                    <th>Hard Plastic bottles and containers</th>
+                    <td><li>Takeaway containers</li><li>Milk, cordial,water,soft drink bottles (leave lids on)</li><li>Cream bottles</li><li>Yoghurt and ice cream containers</li> </td>
+                </tr>
+
+                <tr>
+                    <th>Paper and cardboard</th>
+                    <td><li>Paper, Newspaper, magazines</li><li>Paper bags, Pizza boxes</li></td>
+                </tr>
+
+                <tr>
+                    <th>Glass bottles and jars (empty, cleaning not required, leave lids on)</th>
+                    <td><li>Sauce bottles</li> <li>Drinks containers</li> <li>Jars from jams</li> <li>spreads</li> <li>Coffee jars</li> <li>Salsa</li> <li>pasta sauce jars</li></td>
+                </tr>
+
+                <tr>
+                    <th>Steel cans</th>
+                    <td><li>Fruit tins</li> <li>Vegetable cans</li><li>Pet food tins</li><li>Aerosol cans (must be empty)</li></td>
+                </tr>
+
+                <tr>
+                    <th>Aluminium cans and foil</th>
+                    <td><li>Aluminium foil (scrunch into a ball)</li> <li>Aluminium trays</li><li>Soft drink cans</li><li>Aerosol cans (must be empty) </li></td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="w3-third w3-center">
+          <img class="w3-image" src="../static/images/yellow.png" alt="Architecture" width="300" height="1000" style="background-opacity:75%;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Grid -->
+    <div class="w3-row-padding w3-padding-64 w3-container" id="red">
+      <div class="w3-content">
+        <div class="w3-twothird">
+          <h1 class="w3-text-red">Red Bin</h1>
+          <h5 class="w3-padding-32">Your landfill bin (red lid) is for any items that cannot be recycled through your recycling bin, food and garden waste bin or other recycling services.</h5>
+
+          <h5 class="w3-text-red">All rubbish must be bagged or wrapped before going in your red bin</h5>
+            <table class="w3-table-all">
+                <tr>
+                    <td>Takeaway coffee cups, lids, straws</td>
+                </tr>
+                <tr>
+                    <td>Plastic bags, plastic film, soft plastics (read about recent changes to soft plastics recycling and new options for Monash residents)</td>
+                </tr>
+
+                <tr>
+                    <td>Long life milk and juice containers (UHT, Tetra Pak)</td>
+                </tr>
+
+                <tr>
+                    <td>Food packaging, fruit stickers</td>
+                </tr>
+
+                <tr>
+                    <td>Baby wipes, wet wipes</td>
+                </tr>
+
+                <tr>
+                    <td>Nappies, pet waste, sanitary and incontinence products (wrapped)</td>
+                </tr>
+                 <tr>
+                    <td>Broken drinking glass, mugs, ceramics (wrapped)</td>
+                </tr>
+
+                <tr>
+                    <td>Broken crockery, cutlery, pyrex (wrapped)</td>
+                </tr>
+
+                <tr>
+                    <td>Clothing, footwear, textiles</td>
+                </tr>
+
+                <tr>
+                    <td>Cosmetic containers</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="w3-third w3-center">
+          <img class="w3-image" src="../static/images/red.png" alt="Architecture" width="300" height="800" style="background-opacity:75%;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Third Grid -->
+    <div class="w3-row-padding w3-padding-64 w3-container" id="green">
+      <div class="w3-content">
+        <div class="w3-twothird">
+          <h1 class="w3-text-green">Green Bin</h1>
+          <h5 class="w3-padding-32">Your food and garden waste bin (green lid) is for food scraps, garden prunings and some organic material. The bin is collected every week</h5>
+
+          <h5 class="w3-text-green">These items can go in your food and garden waste bin</h5>
+            <table class="w3-table-all">
+                <tr>
+                    <th>Garden prunings</th>
+                    <td>Put garden prunings loose in your bin. e.g. <br> <li>Grass clippings</li><li>Flowers, leaves, weeds</li><li>Plants, small shrubs</li><li>Small branches, sticks (no longer than 40cm, or 10cm in diameter)</li><li>Straw, hay</li> </td>
+                </tr>
+
+                <tr>
+                    <th>Food scraps</th>
+                    <td>Food can go in the bin loose or wrapped in paper towel or newspaper. No other food packaging is accepted. e.g.<br><li>Fruit, vegetables</li><li>Avocado stones</li><li>Meat, seafood, bones (raw and cooked)</li><li>Baked goods, bread, pastries</li><li>Takeaway, fried foods</li></td>
+                </tr>
+
+                <tr>
+                    <th>Other organic material</th>
+                    <td><li>Compostable liners with the certified compostable logo</li> <li>Paper towel, tissues, serviettes</li> <li>Shredded paper</li> <li>Paper (smaller than postcard size)</li> <li>Pizza boxes</li> <li>Cardboard (single sheet only, used to line the bottom of the bin; remove any staples or sticky tape)</li> <li>Human hair, animal hair, animal feathers</li></td>
+                </tr>
+
+
+            </table>
+        </div>
+
+        <div class="w3-third w3-center">
+          <img class="w3-image" src="../static/images/green.png" alt="Architecture" width="300" height="800" style="background-opacity:75%;">
+        </div>
+      </div>
+    </div>
+
 </div>

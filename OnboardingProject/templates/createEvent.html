@@ -1,36 +1,28 @@
-<!--
-    <h1> Create a New Event</h1>
-    <form method="post">
-        <label for="title">Event Topic</label>
-        <br>
-        <input type="text" name="title"
-               placeholder="Event topic"
-               value="{{ request.form['event_topic'] }}"></input>
-        <br>
-
-        <label for="content">Event Content</label>
-        <br>
-        <textarea name="content"
-                  placeholder="Event content"
-                  rows="15"
-                  cols="60"
-                  >{{ request.form['event_content'] }}</textarea>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
--->
-    <div class="w3-container w3-padding-32" id="contact">
+ <div class="w3-container w3-padding-32" id="contact">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Create New Event</h3>
     <p>Lets organise your own event for recycling</p>
-    <form action="/action_page.php" target="_blank">
-        <input class="w3-input w3-border" type="text" placeholder="Event Topic" required name="event_topic">
-        <input class="w3-input w3-section w3-border" type="datetime-local" id="eventtime" required name="event_time">
-        <input class="w3-input w3-section w3-border" type="text" placeholder="Event Place" required name="event_location">
-        <input class="w3-input w3-section w3-border" type="text" placeholder="Contact Details" required name="contact_details">
-        <textarea class="w3-input w3-section w3-border" type="text" placeholder="Event Contents" required name="event_contents"  rows="15"
+    <form action="/CreateEvent" target="_blank" method="post">
+        <input class="w3-input w3-border" type="text" placeholder="Event Topic" name="event_topic">
+        <input class="w3-input w3-section w3-border" type="datetime-local" id="eventtime" name="event_time">
+        <select class="w3-input w3-section w3-border" type="text" placeholder="Event Place" name="event_place">
+            <option>Box Hill</option>
+            <option>Carlton</option>
+            <option>Clayton</option>
+            <option>Caulfield</option>
+            <option>Docklands</option>
+            <option>Glen</option>
+            <option>Melbourne center</option>
+            <option>Southbank</option>
+        </select>
+
+        <input class="w3-input w3-section w3-border" type="text" placeholder="Contact Details" name="contact_details">
+        <textarea class="w3-input w3-section w3-border" type="text" placeholder="Event Contents" name="event_content"  rows="15"
                   cols="60"></textarea>
         <button class="w3-button w3-black w3-section" type="submit">
             <i class="fa fa-paper-plane"></i> Submit Event
+      </button>
+        <button class="w3-button w3-black w3-section" type="Cancel" action="/home">
+            <i class="fa fa-paper-plane"></i> Cancel Event
       </button>
     </form>
   </div>

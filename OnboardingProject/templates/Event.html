@@ -1,15 +1,21 @@
-<h1>Recycling Events</h1>
+<div class="body_contents">
+
+    <header class="w3-display-container w3-content w3-wide w3-center" style="max-width:1500px;" id="home">
+        <h1 class="w3-xxlarge w3-text-white"><span class="w3-hide-small w3-text-light-green">Recycling Events</span></h1>
+    </header>
 
 <a class="button" href="/CreateEvent">Create A New Event</a>
 <div class="row">
-  <div class="column">
-    <div class="card">
-      <h3>Event 1</h3>
-      <p>Date</p>
-      <p>Contents</p>
-    </div>
-  </div>
-
+    {% for event in events %}
+        <div class="column">
+            <div class="card">
+                <h3>{{ event[0] }}</h3>
+                <p>{{ event[1] }}</p>
+                <p>{{ event[4] }}</p>
+            </div>
+        </div>
+    {% endfor %}
+<!--
   <div class="column">
     <div class="card">
       <h3>Event 2</h3>
@@ -17,7 +23,7 @@
       <p>Contents</p>
     </div>
   </div>
-  
+
   <div class="column">
     <div class="card">
       <h3>Event 3</h3>
@@ -25,7 +31,7 @@
       <p>Contents</p>
     </div>
   </div>
-  
+
   <div class="column">
     <div class="card">
       <h3>Event 4</h3>
@@ -33,4 +39,6 @@
       <p>Contents</p>
     </div>
   </div>
+  -->
+</div>
 </div>

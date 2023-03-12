@@ -3,7 +3,7 @@ This file is used to design the style of the nagvar and foot on the each page
  */
 
 .footer{
-    position: fixed;
+
    left: 0;
    bottom: 0;
    width: 100%;
@@ -14,14 +14,12 @@ This file is used to design the style of the nagvar and foot on the each page
 
 body{
     background-color: whitesmoke;
-    min-height: 100%;
     background-position: center;
     background-size: cover;
 
     }
-
 .body_contents{
-    padding: 10px;
+    height: 100%;
 }
 
 .button{
@@ -73,3 +71,15 @@ body{
   text-align: left;
   background-color: #f1f1f1;
 }
+
+.w3-sidebar {
+    margin: 10px 0;
+    background: #222;
+    position: center;
+}
+
+.classification_contents{
+    margin-left: 120px;
+}
+
+@media only screen and (max-width: 600px) {.classification_contents {margin-left: 0}}

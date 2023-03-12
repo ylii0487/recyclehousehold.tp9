@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 # This class loads html files from the "template" directory and formats them using Python.
 # -----------------------------------------------------------------------------
-
+from flask import Flask, render_template_string
 class View():
 
     def __init__(self,
@@ -26,7 +26,7 @@ class View():
 
     # Just calls the format method as appropriate
     def simple_render(self, template, **kwargs):
-        template = template.format(**kwargs)
+        template = render_template_string(template, **kwargs)
         return template
 
     def render(self, template, **kwargs):
