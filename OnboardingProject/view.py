@@ -5,7 +5,7 @@ from flask import Flask, render_template_string
 class View():
 
     def __init__(self,
-                 template_path="D:\github/fit5120main/fit5120/OnboardingProject/templates/",  # Path to template files
+                 template_path="templates/",  # Path to template files
                  template_extension=".html",  # Extension of templates, self can be overridden
                  **kwargs):  # Used to pass any global format arguments
         self.template_path = template_path
