@@ -168,3 +168,19 @@ class MySQLDatabase():
         self.commit()
 
         return result
+
+    def get_searchLocation(self, search_keywords):
+        sql_cmd = """SELECT * 
+                                FROM recycle_area
+                                WHERE Recycling_and_Waste_Centre LIKE '%{Recycling_and_Waste_Centre}%'
+                                """.format(Recycling_and_Waste_Centre=search_keywords)
+
+        self.cursor.execute(sql_cmd)
+
+        result = list(self.cursor.fetchall())
+        print(result)
+
+        self.commit()
+
+        print("database")
+        return result

@@ -15,9 +15,13 @@ def classification():
     return model.classification_page()
 
 
-@app.route('/WasteMap', methods=['GET'])
-def trends():
-    return model.trend_page()
+@app.route('/WasteMap', methods=['GET', 'POST'])
+def map():
+    if request.method == 'GET':
+        return model.map_page()
+    elif request.method == 'POST':
+        search_keywords = request.form['location']
+        return model.location_resultpage(search_keywords)
 
 
 @app.route('/Event', methods=['GET','POST'])

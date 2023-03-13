@@ -16,11 +16,9 @@ def classification_page():
     return page_view("Classification")
 
 
-def trend_page():
-
-    # area = database.get_allArea()
-    return page_view("WasteMap")
-
+def map_page():
+    area = database.get_allArea()
+    return page_view("WasteMap", areas=area)
 
 
 def event_page():
@@ -105,7 +103,6 @@ def event_resultpgae(search_keywords):
 
 
 def feedback_resultpgae(search_keywords):
-
     if search_keywords is None:
 
         err_str = "search_keywords cannot be null"
@@ -116,10 +113,29 @@ def feedback_resultpgae(search_keywords):
 
         feedbacks = database.get_searchFeedback(search_keywords)
 
-
         if len(feedbacks) > 0:
 
             return page_view("Feedback", feedbacks=feedbacks)
+        else:
+
+            err_str = "Cannot find it"
+            return page_view("invalid_add", reason=err_str)
+
+
+def location_resultpage(search_keywords):
+    if search_keywords is None:
+
+        err_str = "search_keywords cannot be null"
+
+        return page_view("invalid_add", reason=err_str)
+
+    else:
+
+        results = database.get_searchLocation(search_keywords)
+
+        if len(results) > 0:
+
+            return page_view("WasteMap", areas=results)
         else:
 
             err_str = "Cannot find it"
