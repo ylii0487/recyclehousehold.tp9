@@ -17,8 +17,13 @@ def classification_page():
 
 
 def trend_page():
+<<<<<<< Updated upstream
     area= database.get_allArea()
     return page_view("WasteMap", areas = area)
+=======
+    # area = database.get_allArea()
+    return page_view("WasteMap")
+>>>>>>> Stashed changes
 
 
 def event_page():

@@ -52,6 +52,7 @@ class MySQLDatabase():
                     feedback_comment varchar(100) NOT NULL
 
                 )"""
+
         self.cursor.execute(sql_cmd1)
         self.cursor.execute(sql_cmd2)
 
@@ -151,4 +152,18 @@ class MySQLDatabase():
         self.commit()
 
         print("database")
+        return result
+
+        # function used to get the data in recycle_area, and display in the wastemap page
+
+    def get_allArea(self):
+        sql_cmd = """
+                   SELECT * FROM recycle_area
+                   """
+
+        self.cursor.execute(sql_cmd)
+        result = list(self.cursor.fetchall())
+        print(result)
+        self.commit()
+
         return result
