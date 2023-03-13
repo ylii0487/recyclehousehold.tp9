@@ -18,7 +18,8 @@ def classification_page():
 
 
 def trend_page():
-    return page_view("WasteMap")
+    area= database.get_allArea()
+    return page_view("WasteMap", areas = area)
 
 
 def event_page():

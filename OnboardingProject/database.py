@@ -8,12 +8,12 @@ class MySQLDatabase():
 
     def __init__(self):
         try:
-            self.conn = mysql.connector.connect(user="onboardingAdmin",
-                                          password="CNblue1996!",
-                                          host="onboarding-database.mysql.database.azure.com",
+            self.conn = mysql.connector.connect(user="root",
+                                          password="fit5120",
+                                          host="127.0.0.1",
                                           port=3306,
-                                          database="onboarding",
-                                          ssl_ca= "C:/Users/liyon/Desktop/2023S1/FIT5120/fit5120/OnboardingProject/DigiCertGlobalRootCA.crt.pem")
+                                          database="onboarding")
+                                          #ssl_ca= "C:/Users/liyon/Desktop/2023S1/FIT5120/fit5120/OnboardingProject/DigiCertGlobalRootCA.crt.pem")
 
             if self.conn.is_connected():
                 print("Connection established")
@@ -34,7 +34,7 @@ class MySQLDatabase():
     def tables_setup(self):
 
         sql = """CREATE TABLE IF NOT EXISTS Events(
-                    event_id INT PRIMARY KEY IDENTITY(1,1),
+                    event_id INT PRIMARY KEY AUTO_INCREMENT,
                     event_topic varchar(100) NOT NULL,
                     event_time DATETIME NOT NULL,
                     event_place varchar(100) NOT NULL,
@@ -42,7 +42,7 @@ class MySQLDatabase():
                     event_content varchar(500) NOT NULL
                   );  
                   CREATE TABLE IF NOT EXISTS Feedbacks(
-                    feedback_id INT PRIMARY KEY IDENTITY(1,1),
+                    feedback_id INT PRIMARY KEY AUTO_INCREMENT,
                     feedback_name varchar(100) NOT NULL,
                     feedback_email varchar(100) NOT NULL,
                     feedback_subject varchar(100) NOT NULL,
@@ -98,6 +98,19 @@ class MySQLDatabase():
 
         self.cursor.execute(sql_cmd)
 
+        result = list(self.cursor.fetchall())
+        print(result)
+        self.commit()
+
+        return result
+    
+    #function used to get the data in recycle_area, and display in the wastemap page
+    def get_allArea(self):
+        sql_cmd = """
+                SELECT * FROM recycle_area
+                """
+        
+        self.cursor.execute(sql_cmd)
         result = list(self.cursor.fetchall())
         print(result)
         self.commit()

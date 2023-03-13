@@ -15,7 +15,7 @@ def classification():
     return model.classification_page()
 
 
-@app.route('/WasteMap')
+@app.route('/WasteMap', methods=['GET'])
 def trends():
     return model.trend_page()
 
