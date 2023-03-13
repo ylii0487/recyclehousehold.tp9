@@ -116,6 +116,7 @@ class MySQLDatabase():
     def get_allFeedback(self):
         sql_cmd = """SELECT *
                 FROM Feedbacks
+                ORDER BY feedback_id DESC
                 """
 
         self.cursor.execute(sql_cmd)

@@ -1,11 +1,13 @@
 import view
 import database
-import datetime
+import security
 
 page_view = view.View()
 database = database.MySQLDatabase()
 
 database.tables_setup()
+
+page_security = security.Security()
 
 
 def home_page():
@@ -38,14 +40,17 @@ def create_event(event_topic, event_time, event_place, contact_details, event_co
         return page_view("invalid_add", reason=err_str)
 
     else:
-
-        event_create = database.add_event(event_topic, event_time, event_place, contact_details, event_content)
-        events = database.get_allEvents()
-        if event_create:
-            return page_view("Event", events=events)
-        else:
-            err_str = "The new event is duplicate"
+        if page_security.is_xss(event_topic) or page_security.is_sql_injection(event_topic) or page_security.is_xss(contact_details) or page_security.is_sql_injection(contact_details) or page_security.is_xss(event_content) or page_security.is_sql_injection(event_content):
+            err_str = "String formate is incorrect"
             return page_view("invalid_add", reason=err_str)
+        else:
+            event_create = database.add_event(event_topic, event_time, event_place, contact_details, event_content)
+            events = database.get_allEvents()
+            if event_create:
+                return page_view("Event", events=events)
+            else:
+                err_str = "The new event is duplicate"
+                return page_view("invalid_add", reason=err_str)
 
 
 def feedback_page():
@@ -65,15 +70,18 @@ def create_feedback(feedback_name, feedback_email, feedback_subject, feedback_co
         return page_view("invalid_add", reason=err_str)
 
     else:
-
-        feedback_create = database.add_feedback(feedback_name, feedback_email, feedback_subject, feedback_comment)
-
-        if feedback_create:
-            feedbacks = database.get_allFeedback()
-            return page_view("Feedback", feedbacks=feedbacks)
-        else:
-            err_str = "The new feedback is duplicate"
+        if page_security.is_xss(feedback_name) or page_security.is_sql_injection(feedback_name) or page_security.is_xss(feedback_email) or page_security.is_sql_injection(feedback_email) or page_security.is_xss(feedback_subject) or page_security.is_sql_injection(feedback_subject) or page_security.is_xss(feedback_comment) or page_security.is_sql_injection(feedback_comment):
+            err_str = "String formate is incorrect"
             return page_view("invalid_add", reason=err_str)
+        else:
+            feedback_create = database.add_feedback(feedback_name, feedback_email, feedback_subject, feedback_comment)
+
+            if feedback_create:
+                feedbacks = database.get_allFeedback()
+                return page_view("Feedback", feedbacks=feedbacks)
+            else:
+                err_str = "The new feedback is duplicate"
+                return page_view("invalid_add", reason=err_str)
 
 
 def faq_page():
@@ -92,14 +100,17 @@ def event_resultpgae(search_keywords):
         return page_view("invalid_add", reason=err_str)
 
     else:
-
-        events = database.get_searchEvent(search_keywords)
-
-        if len(events) > 0:
-            return page_view("Event", events=events)
-        else:
-            err_str = "Cannot find it"
+        if page_security.is_xss(search_keywords) or page_security.is_sql_injection(search_keywords):
+            err_str = "String formate is incorrect"
             return page_view("invalid_add", reason=err_str)
+        else:
+            events = database.get_searchEvent(search_keywords)
+
+            if len(events) > 0:
+                return page_view("Event", events=events)
+            else:
+                err_str = "Cannot find it"
+                return page_view("invalid_add", reason=err_str)
 
 
 def feedback_resultpgae(search_keywords):
@@ -110,16 +121,19 @@ def feedback_resultpgae(search_keywords):
         return page_view("invalid_add", reason=err_str)
 
     else:
-
-        feedbacks = database.get_searchFeedback(search_keywords)
-
-        if len(feedbacks) > 0:
-
-            return page_view("Feedback", feedbacks=feedbacks)
-        else:
-
-            err_str = "Cannot find it"
+        if page_security.is_xss(search_keywords) or page_security.is_sql_injection(search_keywords):
+            err_str = "String formate is incorrect"
             return page_view("invalid_add", reason=err_str)
+        else:
+            feedbacks = database.get_searchFeedback(search_keywords)
+
+            if len(feedbacks) > 0:
+
+                return page_view("Feedback", feedbacks=feedbacks)
+            else:
+
+                err_str = "Cannot find it"
+                return page_view("invalid_add", reason=err_str)
 
 
 def location_resultpage(search_keywords):
@@ -130,13 +144,16 @@ def location_resultpage(search_keywords):
         return page_view("invalid_add", reason=err_str)
 
     else:
-
-        results = database.get_searchLocation(search_keywords)
-
-        if len(results) > 0:
-
-            return page_view("WasteMap", areas=results)
-        else:
-
-            err_str = "Cannot find it"
+        if page_security.is_xss(search_keywords) or page_security.is_sql_injection(search_keywords):
+            err_str = "String formate is incorrect"
             return page_view("invalid_add", reason=err_str)
+        else:
+            results = database.get_searchLocation(search_keywords)
+
+            if len(results) > 0:
+
+                return page_view("WasteMap", areas=results)
+            else:
+
+                err_str = "Cannot find it"
+                return page_view("invalid_add", reason=err_str)
