@@ -9,36 +9,15 @@
     {% for event in events %}
         <div class="column">
             <div class="card">
-                <h3>{{ event[0] }}</h3>
-                <p>{{ event[1] }}</p>
-                <p>{{ event[4] }}</p>
+
+                <h3 class="w3-text-green"><b>Event Topic: </b>{{ event[1] }}</h3>
+                <h5><b class="w3-text-blue-gray">Event Date: </b>{{ event[2].strftime("%A, %d %B %Y, %H:%M:%S") }}</h5>
+                <p><b>Event Location: </b>{{ event[3] }}</p>
+                <p><b>Event Contact: </b>{{ event[4] }}</p>
+                <p><b>Event Details: </b>{{ event[5] }}</p>
+
             </div>
         </div>
     {% endfor %}
-<!--
-  <div class="column">
-    <div class="card">
-      <h3>Event 2</h3>
-      <p>Date</p>
-      <p>Contents</p>
-    </div>
-  </div>
-
-  <div class="column">
-    <div class="card">
-      <h3>Event 3</h3>
-      <p>Date</p>
-      <p>Contents</p>
-    </div>
-  </div>
-
-  <div class="column">
-    <div class="card">
-      <h3>Event 4</h3>
-      <p>Date</p>
-      <p>Contents</p>
-    </div>
-  </div>
-  -->
 </div>
 </div>

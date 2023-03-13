@@ -1,7 +1,6 @@
-import datetime
-
 import view
 import database
+import datetime
 
 page_view = view.View()
 database = database.MySQLDatabase()
