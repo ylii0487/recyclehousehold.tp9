@@ -41,7 +41,7 @@ def create_event(event_topic, event_time, event_place, contact_details, event_co
         event_create = database.add_event(event_topic, event_time, event_place, contact_details, event_content)
         events = database.get_allEvents()
         if event_create:
-            return page_view("Event", events)
+            return page_view("Event", events=events)
         else:
             err_str = "The new event is duplicate"
             return page_view("invalid_add", reason=err_str)
@@ -59,7 +59,7 @@ def create_feedbackPage():
 def create_feedback(feedback_name, feedback_email, feedback_subject, feedback_comment):
     if feedback_name is None or feedback_email is None or feedback_subject is None or feedback_comment is None:
 
-        err_str = "feedback_name or feedback_email or feedback_subject or feedback_comment annot be null"
+        err_str = "feedback_name or feedback_email or feedback_subject or feedback_comment cannot be null"
 
         return page_view("invalid_add", reason=err_str)
 
@@ -81,3 +81,43 @@ def faq_page():
 
 def about_page():
     return page_view("AboutUs")
+
+
+def event_resultpgae(search_keywords):
+    if search_keywords is None:
+
+        err_str = "search_keywords cannot be null"
+
+        return page_view("invalid_add", reason=err_str)
+
+    else:
+
+        events = database.get_searchEvent(search_keywords)
+
+        if len(events) > 0:
+            return page_view("Event", events=events)
+        else:
+            err_str = "Cannot find it"
+            return page_view("invalid_add", reason=err_str)
+
+
+def feedback_resultpgae(search_keywords):
+
+    if search_keywords is None:
+
+        err_str = "search_keywords cannot be null"
+
+        return page_view("invalid_add", reason=err_str)
+
+    else:
+
+        feedbacks = database.get_searchFeedback(search_keywords)
+
+
+        if len(feedbacks) > 0:
+
+            return page_view("Feedback", feedbacks=feedbacks)
+        else:
+
+            err_str = "Cannot find it"
+            return page_view("invalid_add", reason=err_str)

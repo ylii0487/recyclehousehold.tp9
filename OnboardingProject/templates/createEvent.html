@@ -3,7 +3,7 @@
     <p>Lets organise your own event for recycling</p>
     <form action="/CreateEvent" target="_blank" method="post">
         <input class="w3-input w3-border" type="text" placeholder="Event Topic" name="event_topic">
-        <input class="w3-input w3-section w3-border" type="datetime-local" id="eventtime" name="event_time">
+        <input class="w3-input w3-section w3-border" type="datetime-local" name="event_time">
         <select class="w3-input w3-section w3-border" type="text" placeholder="Event Place" name="event_place">
             <option>Box Hill</option>
             <option>Carlton</option>
@@ -21,7 +21,7 @@
         <button class="w3-button w3-black w3-section" type="submit">
             <i class="fa fa-paper-plane"></i> Submit Event
       </button>
-        <button class="w3-button w3-black w3-section" type="Cancel" action="/home">
+        <button class="w3-button w3-black w3-section" type="Cancel" action="/Event">
             <i class="fa fa-paper-plane"></i> Cancel Event
       </button>
     </form>

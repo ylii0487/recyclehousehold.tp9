@@ -9,11 +9,11 @@ class MySQLDatabase():
     def __init__(self):
         try:
             self.conn = mysql.connector.connect(user="onboardingAdmin",
-                                          password="CNblue1996!",
-                                          host="onboarding-database.mysql.database.azure.com",
-                                          port=3306,
-                                          database="onboarding",
-                                          ssl_ca= "C:/Users/liyon/Desktop/2023S1/FIT5120/fit5120/OnboardingProject/DigiCertGlobalRootCA.crt.pem")
+                                                password="CNblue1996!",
+                                                host="onboarding-database.mysql.database.azure.com",
+                                                port=3306,
+                                                database="onboarding",
+                                                ssl_ca="C:/Users/liyon/Desktop/2023S1/FIT5120/fit5120/OnboardingProject/DigiCertGlobalRootCA.crt.pem")
 
             if self.conn.is_connected():
                 print("Connection established")
@@ -59,10 +59,10 @@ class MySQLDatabase():
 
     def add_event(self, event_topic, event_time, event_place, contact_details, event_content):
 
-
         sql_cmd = """INSERT INTO Events(event_topic, event_time, event_place, contact_details, event_content)
                         VALUES('{event_topic}', '{event_time}','{event_place}', '{contact_details}', '{event_content}')
-                        """.format(event_topic=event_topic, event_time=event_time, event_place=event_place, contact_details=contact_details, event_content=event_content)
+                        """.format(event_topic=event_topic, event_time=event_time, event_place=event_place,
+                                   contact_details=contact_details, event_content=event_content)
         self.cursor.execute(sql_cmd)
 
         self.commit()
@@ -72,10 +72,10 @@ class MySQLDatabase():
     def get_allEvents(self):
         sql_cmd = """SELECT * 
                 FROM Events
+                ORDER BY event_time DESC
                 """
 
         self.cursor.execute(sql_cmd)
-
 
         result = list(self.cursor.fetchall())
         print(result)
@@ -83,11 +83,26 @@ class MySQLDatabase():
 
         return result
 
+    def get_searchEvent(self, search_keywords):
+        sql_cmd = """SELECT * 
+                        FROM Events
+                        WHERE event_topic LIKE '%{event_topic}%'
+                        ORDER BY event_time DESC
+                        """.format(event_topic=search_keywords)
+
+        self.cursor.execute(sql_cmd)
+
+        result = list(self.cursor.fetchall())
+        print(result)
+        self.commit()
+
+        return result
 
     def add_feedback(self, feedback_name, feedback_email, feedback_subject, feedback_comment):
         sql_cmd = """INSERT INTO Feedbacks(feedback_name, feedback_email, feedback_subject, feedback_comment)
                     VALUES('{feedback_name}', '{feedback_email}','{feedback_subject}', '{feedback_comment}')
-                    """.format(feedback_name=feedback_name, feedback_email=feedback_email, feedback_subject=feedback_subject, feedback_comment=feedback_comment)
+                    """.format(feedback_name=feedback_name, feedback_email=feedback_email,
+                               feedback_subject=feedback_subject, feedback_comment=feedback_comment)
         self.cursor.execute(sql_cmd)
 
         self.commit()
@@ -105,4 +120,20 @@ class MySQLDatabase():
         print(result)
         self.commit()
 
+        return result
+
+    def get_searchFeedback(self, search_feedback):
+        sql_cmd = """SELECT * 
+                        FROM Feedbacks
+                        WHERE feedback_subject LIKE '%{feedback_subject}%'
+                        """.format(feedback_subject=search_feedback)
+
+        self.cursor.execute(sql_cmd)
+
+        result = list(self.cursor.fetchall())
+        print(result)
+
+        self.commit()
+
+        print("database")
         return result

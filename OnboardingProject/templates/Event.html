@@ -5,6 +5,10 @@
     </header>
 
 <a class="button" href="/CreateEvent">Create A New Event</a>
+<form action="/Event" target="_blank" method="post">
+    <input type="text" placeholder="Search Event Topic" name="search_keywords">
+    <button type="submit">Search</button>
+</form>
 <div class="row">
     {% for event in events %}
         <div class="column">

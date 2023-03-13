@@ -20,9 +20,13 @@ def trends():
     return model.trend_page()
 
 
-@app.route('/Event', methods=['GET'])
+@app.route('/Event', methods=['GET','POST'])
 def event():
-    return model.event_page()
+    if request.method == 'GET':
+        return model.event_page()
+    elif request.method == 'POST':
+        search_keywords = request.form['search_keywords']
+        return model.event_resultpgae(search_keywords)
 
 
 @app.route('/CreateEvent', methods=['POST', 'GET'])
@@ -38,9 +42,13 @@ def create_event():
         return model.create_event(event_topic, event_time, event_place, contact_details, event_content)
 
 
-@app.route('/Feedback', methods=['GET'])
+@app.route('/Feedback', methods=['GET', 'POST'])
 def feedback():
-    return model.feedback_page()
+    if request.method == 'GET':
+        return model.feedback_page()
+    elif request.method == 'POST':
+        search_keywords = request.form['search_keywords']
+        return model.feedback_resultpgae(search_keywords)
 
 
 @app.route('/SubmitFeedback', methods=['POST', 'GET'])
