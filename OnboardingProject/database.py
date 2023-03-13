@@ -8,6 +8,7 @@ class MySQLDatabase():
 
     def __init__(self):
         try:
+
             self.conn = mysql.connector.connect(user="onboardingAdmin",
                                                 password="CNblue1996!",
                                                 host="onboarding-database.mysql.database.azure.com",
@@ -33,6 +34,7 @@ class MySQLDatabase():
 
     def tables_setup(self):
 
+
         sql_cmd1 = """CREATE TABLE IF NOT EXISTS Events(
                     event_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     event_topic varchar(100) NOT NULL,
@@ -40,7 +42,7 @@ class MySQLDatabase():
                     event_place varchar(100) NOT NULL,
                     contact_details varchar(100) NOT NULL,
                     event_content varchar(500) NOT NULL
-                  )"""
+
 
         sql_cmd2 = """ CREATE TABLE IF NOT EXISTS Feedbacks(
                     feedback_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -121,6 +123,19 @@ class MySQLDatabase():
         self.commit()
 
         return result
+
+    
+    #function used to get the data in recycle_area, and display in the wastemap page
+    def get_allArea(self):
+        sql_cmd = """
+                SELECT * FROM recycle_area
+                """
+        
+        self.cursor.execute(sql_cmd)
+        result = list(self.cursor.fetchall())
+        print(result)
+        self.commit()
+
 
     def get_searchFeedback(self, search_feedback):
         sql_cmd = """SELECT * 
