@@ -1,10 +1,10 @@
  <div class="w3-container w3-padding-32" id="contact">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Create New Event</h3>
     <p>Lets organise your own event for recycling</p>
-    <form action="/CreateEvent" target="_blank" method="post">
-        <input class="w3-input w3-border" type="text" placeholder="Event Topic" name="event_topic">
-        <input class="w3-input w3-section w3-border" type="datetime-local" name="event_time">
-        <select class="w3-input w3-section w3-border" type="text" placeholder="Event Place" name="event_place">
+    <form action="/CreateEvent" method="post">
+        <input class="w3-input w3-border" type="text" placeholder="Event Topic" required name="event_topic">
+        <input class="w3-input w3-section w3-border" type="datetime-local" required name="event_time">
+        <select class="w3-input w3-section w3-border" type="text" required name="event_place">
             <option>Box Hill</option>
             <option>Carlton</option>
             <option>Clayton</option>
@@ -15,14 +15,19 @@
             <option>Southbank</option>
         </select>
 
-        <input class="w3-input w3-section w3-border" type="text" placeholder="Contact Details" name="contact_details">
-        <textarea class="w3-input w3-section w3-border" type="text" placeholder="Event Contents" name="event_content"  rows="15"
+        <input class="w3-input w3-section w3-border" type="text" placeholder="Contact Details" required name="contact_details">
+        <textarea class="w3-input w3-section w3-border" type="text" placeholder="Event Contents" required name="event_content"  rows="15"
                   cols="60"></textarea>
         <button class="w3-button w3-black w3-section" type="submit">
             <i class="fa fa-paper-plane"></i> Submit Event
       </button>
-        <button class="w3-button w3-black w3-section" type="Cancel" action="/Event">
-            <i class="fa fa-paper-plane"></i> Cancel Event
-      </button>
+
     </form>
+
+     <button class="w3-button w3-black w3-section" type="submit" onclick="window.location.href='/Event';">
+         <i class="fa fa-paper-plane"></i> Cancel Event
+      </button>
   </div>
+
+ <br>
+ <br>

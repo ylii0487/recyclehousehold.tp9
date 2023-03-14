@@ -2,26 +2,69 @@
 
     <header class="w3-display-container w3-content w3-wide w3-center" style="max-width:1500px;" id="home">
         <h1 class="w3-xxlarge w3-text-white"><span class="w3-hide-small w3-text-light-green">Recycling Events</span></h1>
-    </header>
+      </header>
 
-<a class="button" href="/CreateEvent">Create A New Event</a>
-<form action="/Event" target="_blank" method="post">
-    <input type="text" placeholder="Search Event Topic" name="search_keywords">
-    <button type="submit">Search</button>
-</form>
-<div class="row">
-    {% for event in events %}
-        <div class="column">
-            <div class="card">
+<br>
 
-                <h3 class="w3-text-green"><b>Event Topic: </b>{{ event[1] }}</h3>
-                <h5><b class="w3-text-blue-gray">Event Date: </b>{{ event[2].strftime("%A, %d %B %Y, %H:%M:%S") }}</h5>
-                <p><b>Event Location: </b>{{ event[3] }}</p>
-                <p><b>Event Contact: </b>{{ event[4] }}</p>
-                <p><b>Event Details: </b>{{ event[5] }}</p>
 
-            </div>
-        </div>
+    <div class="w3-center">
+        <p class="w3-large w3-text-black">You can find events that interest you on and these events can help you learn how to sort your household's waste in a fun way.</p>
+        <p class="w3-large w3-text-black">Alternatively, if you would like to share your experience on sorting waste in the household, you could also organise an event and invite others to participate.</p>
+
+    </div>
+
+    <br>
+
+<div class="w3-row-padding">
+    <div class="w3-half">
+        <form action="/Event" method="post">
+            <input type="text" placeholder="Search Event Topic" required name="search_keywords" >
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="w3-half">
+        <button class="w3-button w3-green w3-padding-small w3-large"><a href="/CreateEvent">Create Your Event</a></button>
+        <br>
+    </div>
+
+</div>
+
+
+<div class="w3-row-padding">
+{% for event in events %}
+
+    <div class="w3-half w3-padding-16">
+    <div class="w3-card white">
+      <div class="w3-container w3-indigo">
+        <h3>{{ event[1] }}</h3>
+      </div>
+      <div class="w3-container">
+      <h3 class="w3-text-indigo">Date: {{ event[2].strftime("%A, %d %B %Y, %H:%M:%S") }}</h3>
+      </div>
+      <ul class="w3-ul w3-border-top">
+        <li>
+          <h3>Location</h3>
+          <p>{{ event[3] }}</p>
+        </li>
+        <li>
+          <h3>Event Contact details</h3>
+          <p>{{ event[4] }}</p>
+        </li>
+        <li>
+          <h3>Event Details</h3>
+          <p>{{ event[5] }}</p>
+        </li>
+      </ul>
+      <div class="w3-container w3-indigo w3-large"><span class="w3-right">Next</span></div>
+    </div>
+    </div>
+
     {% endfor %}
 </div>
+
+
 </div>
+
+<br>
+<br>

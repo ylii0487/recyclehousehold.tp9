@@ -45,17 +45,8 @@ class MySQLDatabase():
                     )"""
 
 
-        sql_cmd2 = """ CREATE TABLE IF NOT EXISTS Feedbacks(
-                    feedback_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-                    feedback_name varchar(100) NOT NULL,
-                    feedback_email varchar(100) NOT NULL,
-                    feedback_subject varchar(100) NOT NULL,
-                    feedback_comment varchar(100) NOT NULL
-
-                )"""
 
         self.cursor.execute(sql_cmd1)
-        self.cursor.execute(sql_cmd2)
 
         self.commit()
 
@@ -82,7 +73,7 @@ class MySQLDatabase():
         self.cursor.execute(sql_cmd)
 
         result = list(self.cursor.fetchall())
-        print(result)
+        # print(result)
         self.commit()
 
         return result
@@ -97,64 +88,11 @@ class MySQLDatabase():
         self.cursor.execute(sql_cmd)
 
         result = list(self.cursor.fetchall())
-        print(result)
+        # print(result)
         self.commit()
 
         return result
 
-    def add_feedback(self, feedback_name, feedback_email, feedback_subject, feedback_comment):
-        sql_cmd = """INSERT INTO Feedbacks(feedback_name, feedback_email, feedback_subject, feedback_comment)
-                    VALUES('{feedback_name}', '{feedback_email}','{feedback_subject}', '{feedback_comment}')
-                    """.format(feedback_name=feedback_name, feedback_email=feedback_email,
-                               feedback_subject=feedback_subject, feedback_comment=feedback_comment)
-        self.cursor.execute(sql_cmd)
-
-        self.commit()
-
-        return True
-
-    def get_allFeedback(self):
-        sql_cmd = """SELECT *
-                FROM Feedbacks
-                ORDER BY feedback_id DESC
-                """
-
-        self.cursor.execute(sql_cmd)
-
-        result = list(self.cursor.fetchall())
-        print(result)
-        self.commit()
-
-        return result
-
-    
-    #function used to get the data in recycle_area, and display in the wastemap page
-    def get_allArea(self):
-        sql_cmd = """
-                SELECT * FROM recycle_area
-                """
-        
-        self.cursor.execute(sql_cmd)
-        result = list(self.cursor.fetchall())
-        print(result)
-        self.commit()
-
-
-    def get_searchFeedback(self, search_feedback):
-        sql_cmd = """SELECT * 
-                        FROM Feedbacks
-                        WHERE feedback_subject LIKE '%{feedback_subject}%'
-                        """.format(feedback_subject=search_feedback)
-
-        self.cursor.execute(sql_cmd)
-
-        result = list(self.cursor.fetchall())
-        print(result)
-
-        self.commit()
-
-        print("database")
-        return result
 
         # function used to get the data in recycle_area, and display in the wastemap page
 
@@ -165,7 +103,7 @@ class MySQLDatabase():
 
         self.cursor.execute(sql_cmd)
         result = list(self.cursor.fetchall())
-        print(result)
+        # print(result)
         self.commit()
 
         return result
@@ -179,9 +117,9 @@ class MySQLDatabase():
         self.cursor.execute(sql_cmd)
 
         result = list(self.cursor.fetchall())
-        print(result)
+        # print(result)
 
         self.commit()
 
-        print("database")
+        # print("database")
         return result

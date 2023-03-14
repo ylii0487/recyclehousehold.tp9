@@ -33,7 +33,7 @@ def create_eventPage():
 
 
 def create_event(event_topic, event_time, event_place, contact_details, event_content):
-    if event_topic is None or event_time is None or event_place is None or event_content is None or contact_details is None:
+    if len(event_topic) == 0 or event_time is None or event_place is None or event_content is None or contact_details is None:
 
         err_str = "event_topic or event_time or event_place or event_content or contact_details cannot be null"
 
@@ -53,35 +53,7 @@ def create_event(event_topic, event_time, event_place, contact_details, event_co
                 return page_view("invalid_add", reason=err_str)
 
 
-def feedback_page():
-    feedbacks = database.get_allFeedback()
-    return page_view("Feedback", feedbacks=feedbacks)
 
-
-def create_feedbackPage():
-    return page_view("createFeedback")
-
-
-def create_feedback(feedback_name, feedback_email, feedback_subject, feedback_comment):
-    if feedback_name is None or feedback_email is None or feedback_subject is None or feedback_comment is None:
-
-        err_str = "feedback_name or feedback_email or feedback_subject or feedback_comment cannot be null"
-
-        return page_view("invalid_add", reason=err_str)
-
-    else:
-        if page_security.is_xss(feedback_name) or page_security.is_sql_injection(feedback_name) or page_security.is_xss(feedback_email) or page_security.is_sql_injection(feedback_email) or page_security.is_xss(feedback_subject) or page_security.is_sql_injection(feedback_subject) or page_security.is_xss(feedback_comment) or page_security.is_sql_injection(feedback_comment):
-            err_str = "String formate is incorrect"
-            return page_view("invalid_add", reason=err_str)
-        else:
-            feedback_create = database.add_feedback(feedback_name, feedback_email, feedback_subject, feedback_comment)
-
-            if feedback_create:
-                feedbacks = database.get_allFeedback()
-                return page_view("Feedback", feedbacks=feedbacks)
-            else:
-                err_str = "The new feedback is duplicate"
-                return page_view("invalid_add", reason=err_str)
 
 
 def faq_page():
