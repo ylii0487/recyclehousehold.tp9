@@ -11,7 +11,7 @@ page_security = security.Security()
 
 
 def home_page():
-    return page_view("HomePage")
+    return page_view("index")
 
 
 def classification_page():
