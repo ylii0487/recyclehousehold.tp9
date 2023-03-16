@@ -1,0 +1,62 @@
+<div class="body_contents">
+
+    <header class="w3-display-container w3-content w3-wide w3-center" style="max-width:1500px;" id="home">
+        <h1 class="w3-xxlarge w3-text-white"><span class="w3-hide-small w3-text-light-green">Your waste can put into the below bin(s)</span></h1>
+      </header>
+
+<div class="w3-row-padding">
+    <div class="w3-half w3-center">
+
+    </div>
+
+    <div class="w3-half w3-right">
+        <button class="w3-button w3-green w3-padding-small w3-xxlarge"><a href="/Classification">Back</a></button>
+        <br>
+    </div>
+
+</div>
+
+    <br>
+    <div class="w3-responsive w3-card-4" style="margin-left: 50px; margin-right: 50px">
+        <table class="w3-table w3-striped w3-bordered">
+            <thead>
+                <tr class="w3-theme">
+                  <th>Waste type</th>
+                  <th>Rubbish Bin Name</th>
+                    <th>Rubbish Bin Images</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for waste in wastes %}
+                    <tr>
+                        <td class="w3-xlarge w3-center">{{ waste[0] }}</td>
+                        <td>{{ waste[1] }}</td>
+                        {% if waste[1] == 'recycling bin' %}
+                            <td><img src="/static/images/yellow.png" alt="yellow" style="background-opacity:75%; width: 25%; height: 25%"></td>
+
+                        {% elif waste[1] == 'landfill bin' %}
+                            <td><img src="/static/images/red.png" alt="red" style="background-opacity:75%; width: 25%; height: 25%"></td>
+
+                        {% elif waste[1] == 'food and garden waste bin' %}
+                            <td><img src="/static/images/green.png" alt="green" style="background-opacity:75%; width: 25%; height: 25%"></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+<!--
+{% for waste in wastes %}
+{% if waste[1] == 'recycling bin' %}
+<img src="/static/images/yellow.png">
+{% elif waste[1] == 'landfill bin' %}
+<img src="/static/images/red.png">
+{% elif waste[1] == 'food and garden waste bin' %}
+<img src="/static/images/green.png">
+{% else %}
+<p>Sorry, we cannot find it</p>
+{% endif %}
+{% endfor %}
+-->
+</div>

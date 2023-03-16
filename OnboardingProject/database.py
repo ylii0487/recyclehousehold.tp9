@@ -123,3 +123,19 @@ class MySQLDatabase():
 
         # print("database")
         return result
+
+    def get_searchWaste(self, search_keywords):
+        sql_cmd = """SELECT * 
+                    FROM recycle_bins_items
+                    WHERE items LIKE '%{items}%'
+                """.format(items=search_keywords)
+
+        self.cursor.execute(sql_cmd)
+
+        result = list(self.cursor.fetchall())
+        print(result)
+
+        self.commit()
+
+        # print("database")
+        return result

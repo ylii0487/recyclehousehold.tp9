@@ -9,7 +9,7 @@
   <a href="#green" class="w3-bar-item w3-button w3-hover-green">
     <p>Green Bin</p>
   </a>
-    <a href="/WasteMap" class="w3-bar-item w3-button w3-hover-green">
+    <a href="/WasteMap" class="w3-bar-item w3-button w3-theme-d3">
     <p>Find Waste Location</p>
   </a>
 
@@ -18,6 +18,22 @@
     <header class="w3-display-container w3-content w3-wide w3-center" style="max-width:1500px;" id="home">
         <h1 class="w3-xxlarge w3-text-white"><span class="w3-hide-small w3-text-light-green">Garbage Classification Guideline</span></h1>
     </header>
+
+    <br>
+    <br>
+    <div class="w3-row-padding w3-center">
+    <div class="w3-half ">
+        <form action="/Classification" method="post" class="w3-xlarge w3-margin-left">
+            <input type="text" placeholder="Search Your Waste" required name="search_keywords" >
+            <button type="submit" class="w3-green">Search</button>
+        </form>
+    </div>
+
+    <div class="w3-half w3-center">
+
+    </div>
+
+    </div>
 
     <!-- Icon Bar (Sidebar - hidden on small screens) -->
 
@@ -28,39 +44,52 @@
           <h1 class="w3-text-yellow">Yellow Bin</h1>
           <h5 class="w3-padding-32">Your recycling bin (yellow lid) is for common household packaging items typically bought at a supermarket and found in your kitchen, bathroom or laundry.</h5>
             <h5 class="w3-text-yellow">These items can go in your recycling bin</h5>
+
             <table class="w3-table-all">
+                <tr class="w3-theme">
+                      <th>Categories of Waste </th>
+                      <th>Example Images</th>
+                      <th>More Examples</th>
+                    </tr>
                 <tr>
                     <th>Hard Plastic bottles and containers</th>
-                    <td><li>Takeaway containers</li><li>Milk, cordial,water,soft drink bottles (leave lids on)</li><li>Cream bottles</li><li>Yoghurt and ice cream containers</li> </td>
+                    <td><img src="/static/images/rubbish/bottle.jpg" alt="rubbish" style="width: 50%; height: 50%"></td>
+                   <td><li>Takeaway containers</li><li>Milk, cordial,water,soft drink bottles (leave lids on)</li><li>Cream bottles</li><li>Yoghurt and ice cream containers</li> </td>
                 </tr>
 
                 <tr>
                     <th>Paper and cardboard</th>
+                    <td><img src="/static/images/rubbish/paper.jpg" alt="rubbish" style="width: 25%; height: 25%"> <img src="/static/images/rubbish/paperbag.jpg" alt="rubbish" style="background-opacity:75%; width: 25%; height: 25%"> <img src="/static/images/rubbish/newspaper.jpg" alt="rubbish" style="background-opacity:75%; width: 25%; height: 25%"> </td>
                     <td><li>Paper, Newspaper, magazines</li><li>Paper bags, Pizza boxes</li></td>
                 </tr>
 
                 <tr>
                     <th>Glass bottles and jars (empty, cleaning not required, leave lids on)</th>
+                    <td><img src="/static/images/rubbish/glassbottle.jpg" alt="rubbish" style="width: 75%; height: 75%"></td>
                     <td><li>Sauce bottles</li> <li>Drinks containers</li> <li>Jars from jams</li> <li>spreads</li> <li>Coffee jars</li> <li>Salsa</li> <li>pasta sauce jars</li></td>
                 </tr>
 
                 <tr>
                     <th>Steel cans</th>
+                    <td><img src="/static/images/rubbish/green_bean.jpg" alt="rubbish" style="width: 25%; height: 25%"><img src="/static/images/rubbish/tomato.jpg" alt="rubbish" style="background-opacity:75%; width: 25%; height: 25%"></td>
                     <td><li>Fruit tins</li> <li>Vegetable cans</li><li>Pet food tins</li><li>Aerosol cans (must be empty)</li></td>
                 </tr>
 
                 <tr>
                     <th>Aluminium cans and foil</th>
-                    <td><li>Aluminium foil (scrunch into a ball)</li> <li>Aluminium trays</li><li>Soft drink cans</li><li>Aerosol cans (must be empty) </li></td>
+                    <td><img src="/static/images/rubbish/soda.jpg" alt="rubbish" style="width: 25%; height: 25%"> <img src="/static/images/rubbish/beer.jpg" alt="rubbish" style="background-opacity:75%; width: 25%; height: 25%"></td>
+                   <td><li>Aluminium foil (scrunch into a ball)</li> <li>Aluminium trays</li><li>Soft drink cans</li><li>Aerosol cans (must be empty) </li></td>
                 </tr>
 
             </table>
+
         </div>
 
         <div class="w3-third w3-center">
           <img class="w3-image" src="../static/images/yellow.png" alt="Architecture" width="300" height="1000" style="background-opacity:75%;">
         </div>
       </div>
+
     </div>
 
     <!-- Second Grid -->
@@ -72,42 +101,59 @@
 
           <h5 class="w3-text-red">All rubbish must be bagged or wrapped before going in your red bin</h5>
             <table class="w3-table-all">
+                <tr class="w3-theme">
+                      <th>Categories of waste </th>
+                      <th>Example Images</th>
+                    </tr>
+                <tr>
                 <tr>
                     <td>Takeaway coffee cups, lids, straws</td>
+                    <td><img src="/static/images/rubbish/coffee.jpg" alt="rubbish" style="width: 25%; height: 25%"></td>
                 </tr>
                 <tr>
                     <td>Plastic bags, plastic film, soft plastics (read about recent changes to soft plastics recycling and new options for Monash residents)</td>
+                    <td><img src="/static/images/rubbish/Plasticbags.jpg" alt="rubbish" style="width: 75%; height: 75%"> </td>
                 </tr>
 
                 <tr>
                     <td>Long life milk and juice containers (UHT, Tetra Pak)</td>
+                    <td><img src="/static/images/rubbish/milk.jpg" alt="rubbish" style="width: 25%; height: 25%"> </td>
                 </tr>
 
                 <tr>
                     <td>Food packaging, fruit stickers</td>
+                    <td><img src="/static/images/rubbish/case.jpg" alt="rubbish" style="width: 50%; height: 50%"> </td>
                 </tr>
 
                 <tr>
                     <td>Baby wipes, wet wipes</td>
+                    <td><img src="/static/images/rubbish/baby_wipes.jpg" alt="rubbish" style="width: 25%; height: 25%"> </td>
                 </tr>
 
                 <tr>
                     <td>Nappies, pet waste, sanitary and incontinence products (wrapped)</td>
+                    <td><img src="/static/images/rubbish/Nappies.jpg" alt="rubbish" style="width: 25%; height: 25%"> </td>
                 </tr>
                  <tr>
                     <td>Broken drinking glass, mugs, ceramics (wrapped)</td>
+                     <td><img src="/static/images/rubbish/broken-glass.png" alt="rubbish" style="width: 25%; height: 25%"> <img src="/static/images/rubbish/mug.jpg" alt="rubbish" style="background-opacity:75%; width: 25%; height: 25%"> </td>
+
                 </tr>
 
                 <tr>
                     <td>Broken crockery, cutlery, pyrex (wrapped)</td>
+                    <td><img src="/static/images/rubbish/broken.png" alt="rubbish" style="width: 50%; height: 50%">
+                    <img src="/static/images/rubbish/cutlery.jpg" alt="rubbish" style="width: 25%; height: 25%"> </td>
                 </tr>
 
                 <tr>
                     <td>Clothing, footwear, textiles</td>
+                    <td><img src="/static/images/rubbish/cloth.jpg" alt="rubbish" style="width: 25%; height: 25%"> <img src="/static/images/rubbish/footwear.jpg" alt="rubbish" style="background-opacity:75%; width: 25%; height: 25%"> </>
                 </tr>
 
                 <tr>
                     <td>Cosmetic containers</td>
+                    <td><img src="/static/images/rubbish/cosmetics.jpg" alt="rubbish" style="width: 25%; height: 25%"> </td>
                 </tr>
 
             </table>
@@ -128,18 +174,28 @@
 
           <h5 class="w3-text-green">These items can go in your food and garden waste bin</h5>
             <table class="w3-table-all">
+                <tr class="w3-theme">
+                    <th>Categories of waste </th>
+                    <th>Example Images</th>
+                    <th> More Example</th>
+                </tr>
+                <tr>
+
                 <tr>
                     <th>Garden prunings</th>
+                    <td><img src="/static/images/rubbish/graden.jpg" alt="rubbish" style="width: 25%; height: 25%"> <img src="/static/images/rubbish/tu.jpg" alt="rubbish" style="background-opacity:75%; width: 50%; height: 50%"> </td>
                     <td>Put garden prunings loose in your bin. e.g. <br> <li>Grass clippings</li><li>Flowers, leaves, weeds</li><li>Plants, small shrubs</li><li>Small branches, sticks (no longer than 40cm, or 10cm in diameter)</li><li>Straw, hay</li> </td>
                 </tr>
 
                 <tr>
                     <th>Food scraps</th>
+                    <td><img src="/static/images/rubbish/apple.jpg" alt="rubbish" style="width: 40%; height: 40%"> <img src="/static/images/rubbish/bone.jpg" alt="rubbish" style="background-opacity:75%; width: 50%; height: 50%"> </td>
                     <td>Food can go in the bin loose or wrapped in paper towel or newspaper. No other food packaging is accepted. e.g.<br><li>Fruit, vegetables</li><li>Avocado stones</li><li>Meat, seafood, bones (raw and cooked)</li><li>Baked goods, bread, pastries</li><li>Takeaway, fried foods</li></td>
                 </tr>
 
                 <tr>
                     <th>Other organic material</th>
+                    <td><img src="/static/images/rubbish/organic.jpg" alt="rubbish" style="background-opacity:75%; width: 75%; height: 75%"> </td>
                     <td><li>Compostable liners with the certified compostable logo</li> <li>Paper towel, tissues, serviettes</li> <li>Shredded paper</li> <li>Paper (smaller than postcard size)</li> <li>Pizza boxes</li> <li>Cardboard (single sheet only, used to line the bottom of the bin; remove any staples or sticky tape)</li> <li>Human hair, animal hair, animal feathers</li></td>
                 </tr>
 

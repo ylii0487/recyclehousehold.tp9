@@ -10,9 +10,13 @@ def index():  # put application's code here
     return model.home_page()
 
 
-@app.route('/Classification')
+@app.route('/Classification', methods=['GET', 'POST'])
 def classification():
-    return model.classification_page()
+    if request.method == 'GET':
+        return model.classification_page()
+    elif request.method == 'POST':
+        search_keywords = request.form['search_keywords']
+        return model.waste_resultpage(search_keywords)
 
 
 @app.route('/WasteMap', methods=['GET', 'POST'])

@@ -109,3 +109,24 @@ def location_resultpage(search_keywords):
                 return page_view("invalid_add", reason=err_str)
 
 
+def waste_resultpage(search_keywords):
+    if len(search_keywords.split(" ")) == 0:
+
+        err_str = "search_keywords cannot be null"
+
+        return page_view("invalid_add", reason=err_str)
+
+    else:
+        if page_security.is_xss(search_keywords) or page_security.is_sql_injection(search_keywords):
+            err_str = "String formate is incorrect"
+            return page_view("invalid_add", reason=err_str)
+        else:
+            results = database.get_searchWaste(search_keywords)
+
+            if len(results) > 0:
+
+                return page_view("ClassificationResult", wastes=results)
+            else:
+
+                err_str = "Cannot find it"
+                return page_view("invalid_add", reason=err_str)

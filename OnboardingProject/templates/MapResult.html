@@ -6,6 +6,18 @@
 
 <div class="w3-content">
 
+<div class="w3-row-padding">
+    <div class="w3-half w3-center">
+
+    </div>
+
+    <div class="w3-half w3-right">
+        <button class="w3-button w3-green w3-padding-small w3-xxlarge"><a href="/WasteMap">Back</a></button>
+        <br>
+    </div>
+
+</div>
+
 <div class="w3-row w3-margin">
         {% for area in areas %}
             <div class="w3-card">
@@ -20,7 +32,8 @@
                     <br>Phone No.: {{ area[4] }}
                     <br>
                     <br>Council: {{ area[0] }}
-                    <br>More information: <a href={{area[1]}} target="_blank">{{ area[1] }}</a></br>
+                    <br>
+                    <br><a href={{area[1]}} target="_blank">More information</a>
 
                         </br>
                 </p>
