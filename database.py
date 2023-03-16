@@ -1,5 +1,4 @@
 import datetime
-
 import mysql.connector
 from mysql.connector import errorcode
 
@@ -13,15 +12,11 @@ class MySQLDatabase():
                                                 password="CNblue1996!",
                                                 host="onboarding-database.mysql.database.azure.com",
                                                 port=3306,
-                                                database="onboarding",
-                                                ssl_ca="C:/Users/liyon/Desktop/2023S1/FIT5120/fit5120/OnboardingProject/DigiCertGlobalRootCA.crt.pem")
+                                                database="onboarding")
 
-            if self.conn.is_connected():
-                print("Connection established")
-                self.cursor = self.conn.cursor()
+            self.cursor = self.conn.cursor()
 
-            else:
-                print("Connection failed.")
+
         except mysql.connector.Error as err:
             print(err)
 
@@ -34,7 +29,6 @@ class MySQLDatabase():
 
     def tables_setup(self):
 
-
         sql_cmd1 = """CREATE TABLE IF NOT EXISTS Events(
                     event_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     event_topic varchar(100) NOT NULL,
@@ -43,8 +37,6 @@ class MySQLDatabase():
                     contact_details varchar(100) NOT NULL,
                     event_content varchar(500) NOT NULL
                     )"""
-
-
 
         self.cursor.execute(sql_cmd1)
 
@@ -92,7 +84,6 @@ class MySQLDatabase():
         self.commit()
 
         return result
-
 
         # function used to get the data in recycle_area, and display in the wastemap page
 
