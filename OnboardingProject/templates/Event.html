@@ -9,62 +9,103 @@
 
     <div class="w3-center">
         <p class="w3-large w3-text-black">You can find events that interest you on and these events can help you learn how to sort your household's waste in a fun way.</p>
-        <p class="w3-large w3-text-black">Alternatively, if you would like to share your experience on sorting waste in the household, you could also organise an event and invite others to participate.</p>
 
     </div>
 
     <br>
 
 <div class="w3-row-padding">
-    <div class="w3-half">
-        <form action="/Event" method="post">
+    <div class="w3-half w3-center">
+        <form action="/Event" method="post" class="w3-xlarge">
             <input type="text" placeholder="Search Event Topic" required name="search_keywords" >
-            <button type="submit">Search</button>
+            <button type="submit" class="w3-green">Search</button>
         </form>
     </div>
 
-    <div class="w3-half">
-        <button class="w3-button w3-green w3-padding-small w3-large"><a href="/CreateEvent">Create Your Event</a></button>
+    <div class="w3-half w3-center">
+        <button class="w3-button w3-green w3-padding-small w3-xlarge"><a href="/CreateEvent">Create Your Event</a></button>
         <br>
     </div>
 
 </div>
 
 
-<div class="w3-row-padding">
+</div>
+
+<br>
+<br>
+
+<!--
 {% for event in events %}
 
-    <div class="w3-half w3-padding-16">
-    <div class="w3-card white">
-      <div class="w3-container w3-indigo">
+    <div class="mySlides w3-center" id="{{ event[0] }}" >
+        <div class="w3-card white w3-padding-16" style="width: 800px; margin-left: 350px">
+              <div class="w3-container w3-light-green w3-center w3-text-white">
+                <h3>Event Topic: {{ event[1] }}</h3>
+              </div>
+              <div class="w3-container">
+              <h3 class="w3-text-dark-gray w3-large">{{ event[5]}}</h3>
+              </div>
+              <div class="w3-container w3-large">
+                  <button class="w3-btn w3-large w3-hover-dark-gray w3-right" onclick="document.getElementById('id{{ event[0] }}').style.display='block'" style="font-weight:700;">More Information</button></div>
+            </div>
+    <hr>
+    </div>
+    <div id="id{{ event[0] }}" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+      <header class="w3-container w3-purple">
+        <span onclick="document.getElementById('id{{ event[0] }}').style.display='none'" class="w3-button w3-display-topright">X</span>
         <h3>{{ event[1] }}</h3>
-      </div>
-      <div class="w3-container">
-      <h3 class="w3-text-indigo">Date: {{ event[2].strftime("%A, %d %B %Y, %H:%M:%S") }}</h3>
-      </div>
-      <ul class="w3-ul w3-border-top">
-        <li>
-          <h3>Location</h3>
-          <p>{{ event[3] }}</p>
-        </li>
-        <li>
-          <h3>Event Contact details</h3>
-          <p>{{ event[4] }}</p>
-        </li>
-        <li>
-          <h3>Event Details</h3>
-          <p>{{ event[5] }}</p>
-        </li>
-      </ul>
-      <div class="w3-container w3-indigo w3-large"><span class="w3-right">Next</span></div>
-    </div>
-    </div>
 
+      </header>
+      <div class="w3-padding">
+          <p>Event Location: {{ event[3] }}</p>
+        <p>Event Date: {{ event[2].strftime("%A, %d %B %Y, %H:%M:%S") }}</p>
+        <p>Event Contact details: {{ event[4] }}</p>
+          <p>Event Details: {{ event[5] }}</p>
+      </div>
+
+    </div>
+</div>
+
+{% endfor %}
+-->
+<div class="w3-row-padding w3-center w3-margin-top">
+
+    {% for event in events %}
+        <div class="w3-third" id="{{ event[0] }}" >
+            <div class="w3-card w3-container" style="min-height:300px">
+                  <div class="w3-container w3-theme w3-text-white">
+                    <h3>{{ event[1] }}</h3>
+                  </div>
+                  <div class="w3-container">
+                  <h3 class="w3-text-dark-gray w3-large">{{ event[5]}}</h3>
+                  </div>
+
+        <hr>
+        </div>
+        <div class="w3-container w3-large w3-theme" >
+            <button class="w3-btn w3-large w3-hover-dark-gray w3-right" onclick="document.getElementById('id{{ event[0] }}').style.display='block'" style="font-weight:700">More Information</button></div>
+        </div>
+        <div id="id{{ event[0] }}" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-top">
+          <header class="w3-container w3-purple">
+            <span onclick="document.getElementById('id{{ event[0] }}').style.display='none'" class="w3-button w3-display-topright">X</span>
+            <h3>{{ event[1] }}</h3>
+
+          </header>
+          <div class="w3-padding">
+              <p>Event Location: {{ event[3] }}</p>
+            <p>Event Date: {{ event[2].strftime("%A, %d %B %Y, %H:%M:%S") }}</p>
+            <p>Event Contact details: {{ event[4] }}</p>
+              <p>Event Details: {{ event[5] }}</p>
+          </div>
+
+        </div>
+    </div>
     {% endfor %}
-</div>
 
 
 </div>
 
-<br>
-<br>
+

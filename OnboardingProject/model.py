@@ -25,7 +25,8 @@ def map_page():
 
 def event_page():
     events = database.get_allEvents()
-    return page_view("Event", events=events)
+    count = len(events)
+    return page_view("Event", events=events, count=count+1)
 
 
 def create_eventPage():
@@ -33,7 +34,7 @@ def create_eventPage():
 
 
 def create_event(event_topic, event_time, event_place, contact_details, event_content):
-    if len(event_topic) == 0 or event_time is None or event_place is None or event_content is None or contact_details is None:
+    if len(event_topic.split(" ")) == 0 or len(event_content.split(" ")) == 0 or len(contact_details.split(" ")) == 0:
 
         err_str = "event_topic or event_time or event_place or event_content or contact_details cannot be null"
 
@@ -65,7 +66,7 @@ def about_page():
 
 
 def event_resultpgae(search_keywords):
-    if search_keywords is None:
+    if len(search_keywords.split(" ")) == 0:
 
         err_str = "search_keywords cannot be null"
 
@@ -81,29 +82,6 @@ def event_resultpgae(search_keywords):
             if len(events) > 0:
                 return page_view("Event", events=events)
             else:
-                err_str = "Cannot find it"
-                return page_view("invalid_add", reason=err_str)
-
-
-def feedback_resultpgae(search_keywords):
-    if search_keywords is None:
-
-        err_str = "search_keywords cannot be null"
-
-        return page_view("invalid_add", reason=err_str)
-
-    else:
-        if page_security.is_xss(search_keywords) or page_security.is_sql_injection(search_keywords):
-            err_str = "String formate is incorrect"
-            return page_view("invalid_add", reason=err_str)
-        else:
-            feedbacks = database.get_searchFeedback(search_keywords)
-
-            if len(feedbacks) > 0:
-
-                return page_view("Feedback", feedbacks=feedbacks)
-            else:
-
                 err_str = "Cannot find it"
                 return page_view("invalid_add", reason=err_str)
 
@@ -124,8 +102,10 @@ def location_resultpage(search_keywords):
 
             if len(results) > 0:
 
-                return page_view("WasteMap", areas=results)
+                return page_view("MapResult", areas=results)
             else:
 
                 err_str = "Cannot find it"
                 return page_view("invalid_add", reason=err_str)
+
+
