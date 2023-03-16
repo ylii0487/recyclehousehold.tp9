@@ -4,101 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6247ab3e-1731-4ac2-b34d-342971703818" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/recyclehousehold.tp9.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnboardingProject/.idea/OnboardingProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnboardingProject/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/OnboardingProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DigiCertGlobalRootCA.crt.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recycle_area.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recycle_bins.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recycle_ref.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/security.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/home.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/Boroondara Recycling and Waste Centre.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/Boroondara Transfer Station.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/Citywide Waste and Recycling Centre.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/Knox Transfer Station.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/Monash Recycling &amp; Waste Centre.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/Monash Waste Transfer and Recycling Centre.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/Stonnington Waste Transfer Station.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/Whitehorse Recycling Waste Centre.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/background2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/bins.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/event.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/green.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/homepage_background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/image1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/image2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/map.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/news1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/news2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/news3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/news4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/news5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/6786055.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/Nappies.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/Plasticbags.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/apple.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/baby_wipes.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/beer.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/bone.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/bottle.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/broken-glass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/broken.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/can.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/case.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/cloth.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/coffee.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/cosmetics.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/cutlery.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/footwear.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/glassbottle.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/graden.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/green_bean.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/icecream.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/milk.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/mug.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/newspaper.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/organic.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/paper.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/paperbag.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/pizza.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/soda.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/tomato.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/rubbish/tu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/yellow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/temp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/AboutUs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Classification.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ClassificationResult.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Event.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/FAQ.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/MapResult.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/WasteMap.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/createEvent.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/invalid_add.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/tailer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view.py" beforeDir="false" />
-    </list>
+    <list default="true" id="6247ab3e-1731-4ac2-b34d-342971703818" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1678961982583</updated>
-      <workItem from="1678961984292" duration="616000" />
+      <workItem from="1678961984292" duration="970000" />
     </task>
     <servers />
   </component>
@@ -192,6 +98,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/recyclehousehold_tp9$controller.coverage" NAME="controller Coverage Results" MODIFIED="1678962268429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnboardingProject" />
+    <SUITE FILE_PATH="coverage/recyclehousehold_tp9$controller.coverage" NAME="controller Coverage Results" MODIFIED="1678962821338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnboardingProject" />
   </component>
 </project>
