@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/recyclehousehold.tp9.iml" filepath="$PROJECT_DIR$/.idea/recyclehousehold.tp9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/OnboardingProject.iml" filepath="$PROJECT_DIR$/.idea/OnboardingProject.iml" />
     </modules>
   </component>
 </project>
