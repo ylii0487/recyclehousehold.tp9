@@ -13,7 +13,7 @@ class MySQLDatabase():
                                                 host="onboarding-database.mysql.database.azure.com",
                                                 port=3306,
                                                 database="onboarding",
-                                                ssl_ca="C:/Users/liyon/Desktop/2023S1/FIT5120/fit5120/OnboardingProject/DigiCertGlobalRootCA.crt.pem")
+                                                ssl_ca="C:/Users/liyon/Desktop/2023S1/FIT5120/recyclehousehold.tp9/DigiCertGlobalRootCA.crt.pem")
 
             self.cursor = self.conn.cursor()
 
